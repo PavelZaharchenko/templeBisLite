@@ -1,0 +1,485 @@
+@colorGrey: #D3D3D3;
+@colorBlue: #40E0D0;
+@colorCoffe: #FF4500;
+@colorLogo: #00BFFF;
+@colorText: #000000;
+@colorA: #FFFFFF;
+
+.logo{
+	font-size: 40px;
+	font-weight: bold;
+	display: inline-block;
+	span{
+		color: @colorLogo;
+		font-weight: normal;
+	}
+}
+// Шапка начало
+header {
+	height: 100px;
+	line-height: 100px;
+	background: @colorGrey;
+	.top-menu {
+		width: 1000px;
+		margin: auto;
+		font-size: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.menu{
+		display: inline-block;
+	}
+	.menu-item {
+		display: inline-block;
+		cursor: pointer;
+		line-height: normal;
+		position: relative;
+		&:not(:last-child){
+			margin-right: 20px;
+		}
+		&:hover>a{
+			background: @colorA;
+			border-top-color: @colorLogo;
+			color: @colorLogo;
+		}
+		&:hover .dropdown-menu {
+			display: block;
+		}
+		a{
+			text-decoration: none;
+			color: @colorText;
+			padding: 5px;
+			border-top: 3px solid transparent;
+			font-size: 16px;
+		}
+	}
+	.dropdown-menu {
+		position: absolute;
+		top: 22px;
+		background: #FFF;
+		width: 200px;
+		padding: 10px 5px;
+		border-bottom: 3px solid @colorLogo;
+		display: none;
+		li {
+			padding: 5px 0;
+			&:not(:last-child) {
+				border-bottom: 1px solid grey;
+			}
+			&:hover a{
+				color: @colorLogo;
+			}
+		}
+		a {
+			border: none;
+			padding-left: 0;
+		}
+	}
+}
+// Шапка конец
+
+// Слайдер начало
+.banner {
+	height: 480px;
+	padding-top: 20px;
+	background: @colorBlue;
+	.slider{
+		margin: auto;
+		width: 1000px;
+		height: 450px;
+		background: url(imgs/cup.png) no-repeat center, url(imgs/citation.png) no-repeat right;
+		background-color: @colorCoffe;
+		p{
+			width: 300px;
+			color: white;
+			font-size: 30px;
+			line-height: 1.5;
+			padding: 150px 0 0px 50px;
+		}
+	}
+	.slider-buttons{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+		font-size: 0;
+	}
+	.button{
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: @colorGrey;
+		cursor: pointer;
+		vertical-align: middle;
+		&:not(:last-child){
+			margin-right: 15px;
+		}
+		&:hover{
+			background: @colorA
+		}
+	}
+}
+// Слайдер конец
+// Колонки начало
+.columns {
+	background: @colorGrey;
+	text-align: center;
+	padding: 50px 0 30px;
+	font-size: 0;
+	.column {
+		width: 240px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+		h1 {
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			position: relative;
+			padding-left: 40px;
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: @colorLogo center no-repeat;
+				position: absolute;
+				left: 0;
+				top: -5px;
+			}
+		}
+		p {
+			margin: 25px 0;
+			font-size: 14px;
+		}
+		a {
+			text-decoration: none;
+			color: @colorLogo;
+			font-size: 12px;
+			&:before{
+				content: '';
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: url(imgs/arow.png) center no-repeat;
+				margin-right: 5px;
+			}
+		}
+	}
+	h1.clean-theme:before {
+		background-image: url(imgs/r1.png);
+	}
+	h1.design:before {
+		background-image: url(imgs/r2.png);
+	}
+	h1.fully-layerd:before {
+		background-image: url(imgs/r3.png);
+	}
+	h1.ready:before {
+		background-image: url(imgs/r4.png);
+	}
+}
+// Последние работы начало
+main{
+	margin: auto;
+	width: 1000px;
+	font-size: 0;
+	padding-bottom: 50px;
+	h1 {
+		display: inline-block;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 18px;
+		&:before{
+			content: '';
+			display: inline-block;
+			margin-right: 10px;
+			position: relative;
+			top: 4px;
+		}
+	}
+	p {
+		font-size: 14px;
+	}
+	.lates-works-header{
+		height: 50px;
+		line-height: 50px;
+		h1:before {
+			width: 14px;
+			height: 24px;
+			background: url(imgs/mouse.png) center no-repeat;
+		}
+	}
+	.ls-buttons{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: @colorLogo center no-repeat;
+		float: right;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+	.prev{
+		margin-right: 10px;
+		background-image: url(imgs/b-arow.png);
+	}
+	.next{
+		background-image: url(imgs/arow.png);
+	}
+	.pics-wrapper{
+		display: flex;
+		justify-content: space-between;
+		padding: 25px 0;
+		border-top: 1px solid @colorGrey;
+		border-bottom: 1px solid @colorGrey;
+		margin-bottom: 20px;
+	}
+	.picture{
+		width: 220px;
+		height: 160px;
+		display: inline-block;
+		text-align: center;
+		position: relative;
+		&:hover .drop-box{
+			display: block;
+			display: flex;
+    		justify-content: space-around;
+
+		}
+	}
+	.pic-1{
+		background-image: url(imgs/pics1.png);
+	}
+	.pic-2{
+		background-image: url(imgs/pics2.png);
+	}
+	.pic-3{
+		background-image: url(imgs/pics3.png);
+	}
+	.pic-4{
+		background-image: url(imgs/pics4.png);
+	}
+	.drop-box{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 60%;
+		background: @colorLogo;
+		display: none;
+		.zoom,
+		.share {
+			margin-top: 20%;
+			cursor: pointer;
+		}
+	}
+	.testimonials {
+		width: 500px;
+		box-sizing: border-box;
+		padding-right: 20px;
+		display: inline-block;
+		h1{
+			margin-bottom: 20px;
+			&:before{
+				width: 24px;
+				height: 23px;
+				background: url(imgs/testimonials.png) center no-repeat;
+			}
+		}
+		p {
+			line-height: 20px;
+		}
+		.author {
+			font-style: italic;
+			font-weight: bold;
+			margin-top: 25px;
+		}
+	}
+	.our-clients {
+		display: block;
+		width: 500px;
+		box-sizing: border-box;
+		padding-left: 20px;
+		display: inline-block;
+		vertical-align: top;
+		h1{
+			margin-bottom: 20px;
+			&:before {
+				width: 24px;
+				height: 20px;
+				background: url(imgs/clients.png) center no-repeat;
+			}
+		}
+	}
+	.client {
+		vertical-align: top;
+		width: 160px;
+		height: 100px;
+		display: inline-block;
+		&:first-child {
+			background: url(imgs/brand1.png);
+		}
+		&:nth-child(2) {
+			background: url(imgs/brand2.png);
+		}
+		&:nth-child(3) {
+			background: url(imgs/brand3.png);
+		}
+		&:nth-child(4) {
+			background: url(imgs/brand4.png);
+		}
+		&:nth-child(5) {
+			background: url(imgs/brand5.png);
+		}
+		&:last-child {
+			background: url(imgs/brand6.png);
+		}
+	}
+	.download-box {
+		background: #E0FFFF;
+		border: 1px solid @colorLogo;
+		padding: 25px 40px;
+		margin-top: 50px;
+		p{
+			display: inline-block;
+			width: 650px;
+		}
+		.download {
+			vertical-align: top;
+			text-decoration: none;
+			display: inline-block;
+			color: @colorText;
+			background: @colorBlue;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 14px;
+			padding: 10px 20px 10px 46px;
+			line-height: 28px;
+			font-family: Arial;
+			border-radius: 5px;
+			border: 1px solid @colorLogo;
+			box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.13);
+			margin-top: 3px;
+			float: right;
+			position: relative;
+			&:before{
+				content: '';
+				display: inline-block;
+				width: 28px;
+				height: 26px;
+				background: url(imgs/download.png) center no-repeat;
+				margin-right: 10px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+		}
+	}
+}
+// Последние работы конец
+//Подвал начало
+footer{
+	background: @colorGrey;
+	padding: 30px 0;
+	.footer-wrapper {
+		width: 1000px;
+		margin: auto;
+		font-size: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.column {
+		font-size: 14px;
+		display: inline-block;
+		vertical-align: top;
+		h1 {
+			font-weight: bold;
+			font-family: arial;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+	}
+	.about-us{
+		padding-right: 10px;
+		width: 25%;
+	}
+	.explore,
+	.browse {
+		width: 10%;
+		li {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+			a {
+				text-decoration: none;
+				color: #000;
+				&:hover {
+					color: @colorLogo;
+				}
+			}
+		}
+	}
+	.contact-us {
+		width: 15%;
+		span {
+			font-weight: bold;
+		}
+		.phone {
+			margin-top: 20px;
+		}
+	}
+	.connect{
+		width: 20%;
+	}
+	.connect-with{
+		font-size: 0px;
+		.icon{
+			vertical-align: top;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			cursor: pointer;
+			&:first-child{
+				background: url(imgs/facebook.png);
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			&:nth-child(2){
+				background: url(imgs/dribbble.png);
+				margin-right: 10px;
+			}
+			&:nth-child(3){
+				background: url(imgs/pinterest.png);
+			}
+			&:nth-child(4){
+				background: url(imgs/linkedin.png);
+				margin-right: 10px;
+			}
+			&:nth-child(5){
+				background: url(imgs/skype.png);
+				margin-right: 10px;
+			}
+			&:last-child{
+				background: url(imgs/share.png);
+			}
+		}
+	}
+	.copyright {
+		width: 1000px;
+		margin: auto;
+		font-size: 14px;
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		p {
+			width: 600px;
+		}
+	}
+}
+//Подвал конец
